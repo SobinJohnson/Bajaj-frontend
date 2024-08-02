@@ -19,9 +19,9 @@ function App() {
       const res = await fetch('https://bajaj-backend-ejvk.onrender.com/bfhl', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(jsonInput)
+        body: JSON.stringify(jsonInput),
       });
 
       if (!res.ok) {
@@ -41,14 +41,14 @@ function App() {
     const value = event.target.value;
     setSelectedOptions(
       selectedOptions.includes(value)
-        ? selectedOptions.filter(option => option !== value)
+        ? selectedOptions.filter((option) => option !== value)
         : [...selectedOptions, value]
     );
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
-      <header className="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl">
+      <header className="bg-white shadow-md rounded-lg p-6 w-full max-w-xl">
         <h1 className="text-3xl font-bold mb-4 text-center">BFHL API Client</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <textarea
@@ -68,7 +68,7 @@ function App() {
         {error && <p className="text-red-500 mt-4">{error}</p>}
         {response && (
           <div className="mt-6">
-            <div className="flex flex-col gap-2 mb-4">
+            <div className="flex gap-2 flex-wrap mb-4">
               <label className="inline-flex items-center">
                 <input
                   type="checkbox"
