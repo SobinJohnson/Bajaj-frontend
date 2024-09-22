@@ -15,10 +15,10 @@ function ResponseDisplay({ response, selectedOptions }) {
           <p>{response.numbers.join(', ')}</p>
         </div>
       )}
-      {selectedOptions.includes('highest_alphabet') && (
+      {selectedOptions.includes('highest_lowercase_alphabet') && (
         <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold mb-2">Highest Alphabet</h3>
-          <p>{response.highest_alphabet.join(', ')}</p>
+          <p>{response.highest_lowercase_alphabet}</p>
         </div>
       )}
     </div>
